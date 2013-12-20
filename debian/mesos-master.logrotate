@@ -1,0 +1,8 @@
+/var/log/memos/master.log {
+	dayly
+	missingok
+	rotate 7
+	compress
+	delaycompress
+	create 640 root adm
+}

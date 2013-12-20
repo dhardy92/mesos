@@ -1,0 +1,4 @@
+usr/lib/mesos/deploy usr/lib/mesos/
+usr/share/mesos usr/share
+usr/sbin/mesos-master usr/sbin
+usr/sbin/*.sh /usr/lib/mesos/sbin

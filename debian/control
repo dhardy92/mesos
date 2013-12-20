@@ -1,0 +1,104 @@
+Source: mesos
+Section: misc
+Priority: optional
+Maintainer: Damien Hardy <dhardy@viadeoteam.com>
+Build-Depends: 
+ debhelper (>= 8.0.0), 
+ libunwind7|libunwind8, 
+ java7-jdk|java6-sdk, 
+ python-all-dev (>= 2.6), 
+ libcurl3-dev, 
+ autoconf, 
+ libtool, 
+ dh-autoreconf, 
+ python-setuptools, 
+ python-protobuf (>= 2.4.1), 
+ chrpath, 
+ libsasl2-dev
+X-Python-Version: >= 2.6
+Standards-Version: 3.9.3
+Homepage: https://mesos.apache.org
+Vcs-Git: git://git.apache.org/mesos.git
+
+Package: mesos-common
+Architecture: any
+Section: misc
+Depends:
+ libmesos (= ${binary:Version}),
+ ${shlibs:Depends},
+ ${misc:Depends}
+Description: common files and library of mesos nodes
+ Apache Mesos is a cluster manager that provides efficient resource isolation
+ and sharing across distributed applications, or frameworks. It can run
+ Hadoop, MPI, Hypertable, Spark (a new framework for low-latency interactive
+ and iterative jobs), and other applications.
+
+Package: libmesos-dev
+Architecture: any
+Section: libdevel
+Depends:
+ libmesos (= ${binary:Version}),
+ ${shlibs:Depends},
+ ${misc:Depends}
+Description: common files and library of mesos nodes
+ Apache Mesos is a cluster manager that provides efficient resource isolation
+ and sharing across distributed applications, or frameworks. It can run
+ Hadoop, MPI, Hypertable, Spark (a new framework for low-latency interactive
+ and iterative jobs), and other applications.
+
+Package: mesos-master
+Architecture: any
+Section: misc
+Depends: 
+ mesos-common (= ${binary:Version}),
+ ${shlibs:Depends}, 
+ ${misc:Depends}
+Description: master service of mesos
+ Apache Mesos is a cluster manager that provides efficient resource isolation
+ and sharing across distributed applications, or frameworks. It can run
+ Hadoop, MPI, Hypertable, Spark (a new framework for low-latency interactive
+ and iterative jobs), and other applications.
+
+Package: mesos-slave
+Architecture: any
+Section: misc
+Depends:
+ mesos-common (= ${binary:Version}),
+ ${shlibs:Depends},
+ ${misc:Depends}
+Description: slave service of mesos
+ Apache Mesos is a cluster manager that provides efficient resource isolation
+ and sharing across distributed applications, or frameworks. It can run
+ Hadoop, MPI, Hypertable, Spark (a new framework for low-latency interactive
+ and iterative jobs), and other applications.
+
+Package: python-mesos
+Architecture: any
+Section: python
+XB-Python-Version: ${python:Versions}
+Depends:
+ libmesos (= ${binary:Version}), 
+ python-protobuf (>= 2.4.1), 
+ ${python:Depends}, 
+ ${misc:Depends}, 
+ ${shlibs:Depends}
+Description: Python bindings for Mesos
+ Apache Mesos is a cluster manager that provides efficient resource isolation
+ and sharing across distributed applications, or frameworks. It can run
+ Hadoop, MPI, Hypertable, Spark (a new framework for low-latency interactive
+ and iterative jobs), and other applications.
+
+Package: libmesos
+Architecture: any
+Section: libs
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: Apache Mesos Library
+ Apache Mesos is a cluster manager that provides efficient resource isolation
+ and sharing across distributed applications, or frameworks. It can run
+ Hadoop, MPI, Hypertable, Spark (a new framework for low-latency interactive
+ and iterative jobs), and other applications.
+

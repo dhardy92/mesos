@@ -1,0 +1,5 @@
+mesos (0.14.2-2) unstable; urgency=low
+
+  * fix logging
+
+ -- Damien Hardy <dhardy@viadeoteam.com>  Fri, 20 Dec 2013 10:42:56 +0100
