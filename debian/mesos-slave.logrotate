@@ -1,5 +1,5 @@
-/var/log/memos/slave.log {
-        dayly
+/var/log/mesos/slave.log {
+        daily
         missingok
         rotate 7
         compress
