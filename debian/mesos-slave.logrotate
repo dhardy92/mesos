@@ -5,4 +5,7 @@
         compress
         delaycompress
         create 640 root adm
+	postrotate
+		/etc/init.d/mesos-slave restart > /dev/null
+	endscript
 }
